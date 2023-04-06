@@ -114,6 +114,7 @@ function login () {
 
 
 
+
 // Validate Functions
 function validate_email(email) {
   expression = /^[^@]+@\w+(\.\w+)+\w$/
