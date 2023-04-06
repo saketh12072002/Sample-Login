@@ -22,7 +22,7 @@ function register () {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
-  milk_before_cereal = document.getElementById('role').value
+  role = document.getElementById('role').value
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -68,6 +68,7 @@ function login () {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
+  
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -93,7 +94,12 @@ function login () {
     database_ref.child('users/' + user.uid).update(user_data)
 
     // DOne
-    window.location.href = "./login.html"
+    if(role.value=="Viewer"){
+      window.location.href = "./index.php";
+    }
+    else{
+      window.location.href = "./index1.php";
+    }
 
   })
   .catch(function(error) {
